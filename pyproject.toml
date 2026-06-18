@@ -1,7 +1,7 @@
 [project]
 name = "log-analyzer"
 version = "0.1.0"
-description = "Add your description here"
+description = "Parse, analyze, and summarize log files using Pandas and the Gemini API"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
