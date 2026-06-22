@@ -29,3 +29,15 @@ def count_by_module(df: pd.DataFrame) -> pd.Series:
 def get_errors(df: pd.DataFrame) -> pd.DataFrame:
     """Return only ERROR and CRITICAL log entries."""
     return df[df["level"].isin(["ERROR", "CRITICAL"])]
+
+
+
+def build_summary(df: pd.DataFrame) -> dict:
+    """Build a structured summary dict from a log DataFrame."""
+    errors = get_errors(df)
+    return {
+        "total": len(df),
+        "by_level": count_by_level(df).to_dict(),
+        "by_module": count_by_module(df).to_dict(),
+        "errors": errors["message"].tolist()
+    }
