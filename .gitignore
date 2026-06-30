@@ -11,3 +11,5 @@ wheels/
 
 # Test Data
 sample.log
+report.md
+test_run.py
